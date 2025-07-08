@@ -1,14 +1,17 @@
-# Zadatak 1
+# 📘 Osnove C# programiranja za početnike
 
-Napraviti klasu `Ucenik` sa sledećim poljima:
-- Ime
-- Prezime
-- GodinaRodjenja
+Ovaj repozitorijum sadrži:
 
-Dodati metodu `PrikaziPodatke()` koja ispisuje sve podatke.
+- Teoriju ključnih koncepata jezika C#
+- Praktične zadatke koji prate svaki koncept
+- Organizovan kod po metodi i vežbi
 
-U `Main` delu instancirati objekat te klase i pozvati metodu.
+## 📄 Sadržaj
 
-## Uputstvo
-- Snimite vaš zadatak kao `Program.cs` u vašem ličnom folderu (npr. `AleksaPremovic/Program.cs`)
-- Napravite `git add`, `commit` i `push` u svoj folder.
+| Sekcija | Opis |
+|--------|------|
+| [Teorija](README-teorija.md) | Objašnjenja ključnih reči i C# koncepta |
+| [Zadaci za vežbu](README-zadaci.md) | Zbirka zadataka koji prate svaki koncept iz `Program.cs` |
+
+🎯 Preporuka: svaki zadatak neka se implementira kao posebna `void` metoda da se vežba organizacija koda.
+
