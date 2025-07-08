@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36221.1 d17.14
+VisualStudioVersion = 17.14.36221.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentAssignments", "StudentAssignments\StudentAssignments.csproj", "{315379E3-FD15-4BBB-A44E-4E8970CEB3C3}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MileMacin", "MileMacin\MileMacin.csproj", "{A475ECDC-8445-EE73-4EF6-33F5B44CF328}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentor", "Mentor\Mentor.csproj", "{8FAC196C-7271-F726-5B48-33CC169F94EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KonstantinSokolov", "KonstantinSokolov\KonstantinSokolov.csproj", "{1CF07313-1DD7-47FF-8C05-523593600B1D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{8FAC196C-7271-F726-5B48-33CC169F94EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FAC196C-7271-F726-5B48-33CC169F94EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FAC196C-7271-F726-5B48-33CC169F94EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CF07313-1DD7-47FF-8C05-523593600B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF07313-1DD7-47FF-8C05-523593600B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF07313-1DD7-47FF-8C05-523593600B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF07313-1DD7-47FF-8C05-523593600B1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
