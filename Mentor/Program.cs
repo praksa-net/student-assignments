@@ -2,24 +2,25 @@
 {
     static void Main()
     {
-        hello();
-        variablesAndConstants();
+        //hello();
+        //variablesAndConstants();
         overflowing();
-        scope();
-        typeConversion();
-        operators();
-        logicalOperators();
-        ifExample();
-        ifElseExample();
-        switchExample();
-        whileLoopExample();
-        forLoopExample();
-        foreachLoopExample();
+        //scope();
+        //typeConversion();
+        //operators();
+        //logicalOperators();
+        //ifExample();
+        //ifElseExample();
+        //switchExample();
+        //whileLoopExample();
+        //forLoopExample();
+        //foreachLoopExample();
     }
 
     static void hello()
     {
         Console.WriteLine("Hello, World!");
+
     }
 
     static void variablesAndConstants()
@@ -31,6 +32,7 @@
         Console.WriteLine("Name: " + name);
         Console.WriteLine("Age: " + age);
         Console.WriteLine("Pi: " + Pi);
+
     }
 
     static void overflowing()
