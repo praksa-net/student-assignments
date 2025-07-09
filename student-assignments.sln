@@ -21,8 +21,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentor", "Mentor\Mentor.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KonstantinSokolov", "KonstantinSokolov\KonstantinSokolov.csproj", "{1CF07313-1DD7-47FF-8C05-523593600B1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AleksaPremovic", "AleksaPremovic\AleksaPremovic.csproj", "{7129B84F-99D5-7CDA-85C9-140F431BAA76}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SergejMatkovic", "SergejMatkovic\SergejMatkovic.csproj", "{C724B03A-9102-1CED-B064-58C169C5D51E}"
 EndProject
 Global
