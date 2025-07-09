@@ -15,6 +15,25 @@ class Student
     GodinaRodjenja = godina;
   }
 
+  public void UnosOcena()
+  { 
+    Console.Write("Unesite broj ocena studenta:");
+    int brojOcena = int.Parse(Console.ReadLine());
+    Ocene = new int[brojOcena];
+    for (int i = 0; i < brojOcena; i++)
+    {
+      Console.Write($"Unesite {i + 1}. ocenu: ");
+      int ocena = int.Parse(Console.ReadLine());
+      while (!Validator.ValidateOcena(ocena))
+      {
+        Console.WriteLine("Uneta ocena nije validna. Unesite ocenu između 1 i 5.");
+        Console.Write($"Unesite {i + 1}. ocenu: ");
+        ocena = int.Parse(Console.ReadLine());
+      }
+      Ocene[i] = ocena;
+    }
+  }
+
   public double IzracunajProsek()
   {
     if (Ocene == null || Ocene.Length == 0)
@@ -35,5 +54,17 @@ class Student
     else if (prosek >= 2.5) return "Dobar";
     else if (prosek >= 1.5) return "Dovoljan";
     else return "Nedovoljan";
+  }
+
+  public void IspisiInformacije()
+  {
+    Console.WriteLine($"Ime: {Ime}");
+    Console.WriteLine($"Prezime: {Prezime}");
+    Console.WriteLine($"Godina rođenja: {GodinaRodjenja}");
+    Console.WriteLine($"Prosek ocena: {IzracunajProsek()}");
+    Console.Write("Uspeh: ");
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    Console.WriteLine(OdrediUspeh());
+    Console.ResetColor();
   }
 }
