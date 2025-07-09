@@ -4,6 +4,34 @@ class Program
 {
     static void Main(string[] args)
     {
+        Student ijustseen = new Student("Andrej", "Jerosenkov", 2007);
+        Console.WriteLine("Unesite broj ocena studenta:");
+        int brojOcena = int.Parse(Console.ReadLine());
+        ijustseen.Ocene = new int[brojOcena];
+        for (int i = 0; i < brojOcena; i++)
+        {
+            Console.Write($"Unesite {i + 1}. ocenu:");
+            int ocena = int.Parse(Console.ReadLine());
+            while (!Validator.ValidateOcena(ocena))
+            {
+                Console.WriteLine("Uneta ocena nije validna. Unesite ocenu između 1 i 5.");
+                Console.Write($"Unesite {i + 1}. ocenu:");
+                ocena = int.Parse(Console.ReadLine());
+            }
+            ijustseen.Ocene[i] = ocena;
+        }
+
+        Console.WriteLine($"Ime: {ijustseen.Ime}");
+        Console.WriteLine($"Prezime: {ijustseen.Prezime}");
+        Console.WriteLine($"Godina rođenja: {ijustseen.GodinaRodjenja}");
+        Console.WriteLine($"Prosek ocena: {ijustseen.IzracunajProsek()}");
+
+        Console.Write("Uspeh: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine(ijustseen.OdrediUspeh());
+        Console.ResetColor();
+
+        /*
         Console.Write("What's your name? ");
         string Name = Console.ReadLine();
         Person ijustseen = new Person(Name, 18);
@@ -162,5 +190,6 @@ class Program
                 Console.WriteLine("Color: " + color);
             }
         }
+        */
     }
 }
