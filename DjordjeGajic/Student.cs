@@ -12,6 +12,16 @@ public class Student
 		int GodinaRodjenja { get; set; }
 		List<int> Ocene { get; set; }
 
+		double IzracunajProsek()
+		{
+			double suma = 0;
+			foreach(int ocena in Ocene)
+			{
+				suma += ocena;
+			}
+			return suma / Ocene.Count;
+		}
+
 
 	}
 }
