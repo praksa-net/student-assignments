@@ -10,8 +10,9 @@ class Program
         {
             Console.WriteLine("Unesite ocenu (ili '0' za kraj unosa.");
             int ocena = Validacija();
+            ocene.Add(ocena);
         } while (Console.ReadLine != 0);
-        Student student = new Student("Djordje", "Gajic", 2007, )
+        Student student = new Student("Djordje", "Gajic", 2007, ocene);
     }
 
     static int Validacija()

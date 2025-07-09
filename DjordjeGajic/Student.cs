@@ -7,10 +7,10 @@ public class Student
 {
 	public Student()
 	{
-		string Ime { get; set; }
-		string Prezime { get; set; }
-		int GodinaRodjenja { get; set; }
-		List<int> Ocene { get; set; }
+		string Ime;
+		string Prezime;
+		int GodinaRodjenja;
+		List<int> Ocene;
 
 		double IzracunajProsek()
 		{
