@@ -18,7 +18,9 @@
                 s.Ocena.Add(ocena);
                 Console.WriteLine();
             }
-
+            s.Ispis();
+            s.IzracunajProsek();
+            s.OdrediUspeh();
         }
     }
 }

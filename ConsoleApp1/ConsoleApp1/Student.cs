@@ -48,5 +48,11 @@ namespace ConsoleApp1
                 Console.WriteLine("odličan");
             }
         }
+        public void Ispis()
+        {
+            Console.WriteLine(Ime);
+            Console.WriteLine(Prezime);
+            Console.WriteLine(GodinaRođenja);
+        }
     }
 }
