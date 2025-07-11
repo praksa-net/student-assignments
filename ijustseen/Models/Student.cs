@@ -6,6 +6,16 @@ class Student
   public int GodinaRodjenja { get; set; }
   public int[] Ocene { get; set; }
 
+  public enum Uspeh
+  { 
+    Odlican,
+    VrloDobar,
+    Dobar,
+    Dovoljan,
+    Nedovoljan,
+    NemaOcena
+  }
+
   public Student() { }
 
   public Student(string name, string surname, int godina)
@@ -18,17 +28,17 @@ class Student
   public void UnosOcena()
   { 
     Console.Write("Unesite broj ocena studenta:");
-    int brojOcena = int.Parse(Console.ReadLine());
+    int brojOcena = Validator.validateIntLine();
     Ocene = new int[brojOcena];
     for (int i = 0; i < brojOcena; i++)
     {
       Console.Write($"Unesite {i + 1}. ocenu: ");
-      int ocena = int.Parse(Console.ReadLine());
+      int ocena = Validator.validateIntLine();
       while (!Validator.ValidateOcena(ocena))
       {
         Console.WriteLine("Uneta ocena nije validna. Unesite ocenu između 1 i 5.");
         Console.Write($"Unesite {i + 1}. ocenu: ");
-        ocena = int.Parse(Console.ReadLine());
+        ocena = Validator.validateIntLine();
       }
       Ocene[i] = ocena;
     }
@@ -45,26 +55,14 @@ class Student
     return prosek;
   }
 
-  public String OdrediUspeh()
+  public Uspeh OdrediUspeh()
   {
     double prosek = IzracunajProsek();
-    if (prosek == 0.0) return "Nema ocena";
-    else if (prosek >= 4.5) return "Odličan";
-    else if (prosek >= 3.5) return "Vrlo dobar";
-    else if (prosek >= 2.5) return "Dobar";
-    else if (prosek >= 1.5) return "Dovoljan";
-    else return "Nedovoljan";
-  }
-
-  public void IspisiInformacije()
-  {
-    Console.WriteLine($"Ime: {Ime}");
-    Console.WriteLine($"Prezime: {Prezime}");
-    Console.WriteLine($"Godina rođenja: {GodinaRodjenja}");
-    Console.WriteLine($"Prosek ocena: {IzracunajProsek()}");
-    Console.Write("Uspeh: ");
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine(OdrediUspeh());
-    Console.ResetColor();
+    if (prosek == 0.0) return (Uspeh)5;
+    else if (prosek >= 4.5) return (Uspeh)0;
+    else if (prosek >= 3.5) return (Uspeh)1;
+    else if (prosek >= 2.5) return (Uspeh)2;
+    else if (prosek >= 1.5) return (Uspeh)3;
+    else return (Uspeh)4;
   }
 }

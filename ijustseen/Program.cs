@@ -4,8 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        Student ijustseen = new Student("Andrej", "Jerosenkov", 2007);
-        ijustseen.UnosOcena();
-        ijustseen.IspisiInformacije();
+
+        StudentFactory studentFactory = new StudentFactory();
+        studentFactory.initClass();
+
+        StudentPrinter.Prikazi(studentFactory.Students[0]);
     }
 }
