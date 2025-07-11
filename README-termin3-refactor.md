@@ -42,7 +42,7 @@ public static class StudentPrinter
 ## ✅ 3. Unapređenje unosa brojeva sa `try-catch`
 
 **Zadatak:**  
-Napravi metodu:
+Napravi metodu (umesto TryParse):
 ```csharp
 int UnesiBroj(string poruka)
 ```
