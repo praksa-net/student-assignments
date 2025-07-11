@@ -22,29 +22,29 @@ public class Student
         return suma / Ocene.Count;
     }
 
-    public string OdrediUspeh()
+    public Prosek OdrediUspeh()
     {
-        string prosek;
+        Prosek prosek;
         double ocena = IzracunajProsek();
         if (ocena >= 4.5)
         {
-            prosek = "Odlican.";
+            prosek = Prosek.Odlican;
         }
         else if (ocena >= 3.5)
         {
-            prosek = "Vrlo dobar.";
+            prosek = Prosek.Vrlodobar;
         }
         else if (ocena >= 2.5)
         {
-            prosek = "Dobar.";
+            prosek = Prosek.Dobar;
         }
         else if (ocena >= 1.5)
         {
-            prosek = "Dovoljan.";
+            prosek = Prosek.Dovoljan;
         }
         else
         {
-            prosek = "Nedovoljan.";
+            prosek = Prosek.Nevodoljan;
         }
         return prosek;
     }

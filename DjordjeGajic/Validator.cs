@@ -17,7 +17,7 @@ namespace DjordjeGajic
                     Console.Write("Unesite ocenu (1 do 5): ");
                     int rezultat = int.Parse(Console.ReadLine());
 
-                    if (rezultat >= 1 && rezultat <= 5)
+                    if (rezultat >= 0 && rezultat <= 5)
                     {
                         return rezultat;
                     }
