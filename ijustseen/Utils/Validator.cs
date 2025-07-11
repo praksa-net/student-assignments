@@ -11,7 +11,7 @@ class Validator
     return true;
   }
 
-  public static int validateIntLine()
+  public static int getValidatedIntString()
   {
     try
     {
@@ -25,7 +25,7 @@ class Validator
     catch
     {
       Console.WriteLine("Unos nije validan. Molimo unesite ceo broj.");
-      return validateIntLine();
+      return getValidatedIntString();
     }
   }
   

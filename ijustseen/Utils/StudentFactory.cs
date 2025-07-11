@@ -37,7 +37,7 @@ class StudentFactory
     Console.Write("Unesite prezime studenta: ");
     string surname = Console.ReadLine();
     Console.Write("Unesite godinu rođenja studenta: ");
-    int yearOfBirth = Validator.validateIntLine();
+    int yearOfBirth = Validator.getValidatedIntString();
 
     Student student = new Student(name, surname, yearOfBirth);
 
@@ -59,7 +59,10 @@ class StudentFactory
     Student student = CreateStudent();
     if (student == null)
     {
+      Console.ForegroundColor = ConsoleColor.Red;
       Console.WriteLine("Kraj unosa.");
+      Console.ResetColor();
+      Console.WriteLine();
       return;
     }
     student.UnosOcena();

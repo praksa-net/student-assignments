@@ -1,4 +1,3 @@
-using System;
 class Student
 {
   public string Ime { get; set; }
@@ -28,17 +27,17 @@ class Student
   public void UnosOcena()
   { 
     Console.Write("Unesite broj ocena studenta:");
-    int brojOcena = Validator.validateIntLine();
+    int brojOcena = Validator.getValidatedIntString();
     Ocene = new int[brojOcena];
     for (int i = 0; i < brojOcena; i++)
     {
       Console.Write($"Unesite {i + 1}. ocenu: ");
-      int ocena = Validator.validateIntLine();
+      int ocena = Validator.getValidatedIntString();
       while (!Validator.ValidateOcena(ocena))
       {
         Console.WriteLine("Uneta ocena nije validna. Unesite ocenu između 1 i 5.");
         Console.Write($"Unesite {i + 1}. ocenu: ");
-        ocena = Validator.validateIntLine();
+        ocena = Validator.getValidatedIntString();
       }
       Ocene[i] = ocena;
     }
