@@ -14,7 +14,7 @@ namespace DjordjeGajic
             {
                 if (int.TryParse(Console.ReadLine(), out int rezultat))
                 {
-                    if ((rezultat > 0 && rezultat < 6) || rezultat == 0)
+                    if (rezultat >= 0 && rezultat <= 5)
                     {
                         return rezultat;
                     }

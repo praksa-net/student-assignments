@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DjordjeGajic;
+using System;
 
 /// <summary>
 /// Summary description for Class1
@@ -6,12 +7,12 @@
 public class Student
 {
 
-    string Ime;
-    string Prezime;
-    int GodinaRodjenja;
-    List<int> Ocene;
+    public string Ime;
+    public string Prezime;
+    public int GodinaRodjenja;
+    public List<int> Ocene;
 
-    double IzracunajProsek()
+    public double IzracunajProsek()
     {
         double suma = 0;
         foreach (int ocena in Ocene)
@@ -21,7 +22,7 @@ public class Student
         return suma / Ocene.Count;
     }
 
-    string OdrediUspeh()
+    public string OdrediUspeh()
     {
         string prosek;
         double ocena = IzracunajProsek();
@@ -48,7 +49,7 @@ public class Student
         return prosek;
     }
 
-    void PrikazInformacija()
+    /*void PrikazInformacija()
     {
         Console.WriteLine("Informacije o studentu:");
         Console.WriteLine($"Ime i prezime: {Ime} {Prezime}");
@@ -60,7 +61,7 @@ public class Student
         }
         Console.WriteLine();
         Console.WriteLine($"Prosek i uspeh: {IzracunajProsek()} - {OdrediUspeh()}");
-    }
+    }*/
 
     public Student(string ime, string prezime, int godina, List<int> ocene)
 	{
@@ -68,6 +69,6 @@ public class Student
         Prezime = prezime;
         GodinaRodjenja = godina;
         Ocene = ocene;
-        PrikazInformacija();
+        StudentInfo.PrikazInformacija(this);
 	}
 }
