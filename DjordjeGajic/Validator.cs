@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DjordjeGajic
 {
-    internal class Validator
+    public class Validator
     {
-        static int Validacija()
+        public static int Validacija()
         {
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out int rezultat))
                 {
-                    if (rezultat > 0 && rezultat < 6)
+                    if ((rezultat > 0 && rezultat < 6) || rezultat == 0)
                     {
                         return rezultat;
                     }
