@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Student
+    public class Student
     {
         public string Ime { get; set; }
         public string Prezime { get; set; }
@@ -29,23 +29,23 @@ namespace ConsoleApp1
             double prosek = Ocena.Average();
             if(prosek < 1.5)
             {
-                Console.WriteLine("Nedovoljan");
+                Console.WriteLine(Uspeh.Nedovoljan);
             }
             if (prosek < 2.5 && prosek > 1.5)
             {
-                Console.WriteLine("dovoljan");
+                Console.WriteLine(Uspeh.Dovoljan);
             }
             if(prosek > 2.5 && prosek < 3.5)
             {
-                Console.WriteLine("Dobar");
+                Console.WriteLine(Uspeh.Dobar);
             }
             if (prosek > 3.5 && prosek < 4.5)
             {
-                Console.WriteLine("Vrlo dobar");
+                Console.WriteLine(Uspeh.VrloDobar);
             }
             else
             {
-                Console.WriteLine("odličan");
+                Console.WriteLine(Uspeh.Odlican);
             }
         }
         public void Ispis()

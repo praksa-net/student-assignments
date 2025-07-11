@@ -4,23 +4,16 @@
     {
         static void Main(string[] args)
         {
-            string ime=Console.ReadLine();
-            string prezme=Console.ReadLine();
-            int godinaRođenja=int.Parse(Console.ReadLine());
-            Student s = new Student(ime, prezme, godinaRođenja);
-            s.Ocena = new List<int> { };
-            Console.WriteLine("Unesi broj ocena");
-            int broj=int.Parse(Console.ReadLine());
-            for(int i=0; i<broj; i++)
+            while (true)
             {
-                Console.WriteLine("Unesi ocenu:");
-                int ocena=int.Parse(Console.ReadLine());
-                s.Ocena.Add(ocena);
-                Console.WriteLine();
+                Console.WriteLine("Unesi kraj da bi se yavršio program");
+                string unos=Console.ReadLine();
+                if (unos.ToLower() == "kraj")
+                {
+                    break;
+                }
+                IspisStudenta.IspišiSve();
             }
-            s.Ispis();
-            s.IzracunajProsek();
-            s.OdrediUspeh();
         }
     }
 }
