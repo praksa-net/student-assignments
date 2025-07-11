@@ -28,6 +28,12 @@ class StudentFactory
     // Create a student with provided values
     Console.Write("Unesite ime studenta: ");
     string name = Console.ReadLine();
+
+    if (string.IsNullOrWhiteSpace(name) || name == "kraj")
+    {
+      return null; // End input if name is empty
+    }
+
     Console.Write("Unesite prezime studenta: ");
     string surname = Console.ReadLine();
     Console.Write("Unesite godinu rođenja studenta: ");
@@ -40,9 +46,25 @@ class StudentFactory
 
   public void initClass()
   {
-    Student mockStudent = CreateMockStudent();
-    mockStudent.UnosOcena();
-    AddStudent(mockStudent);
-    Console.WriteLine(mockStudent.Ime + " " + mockStudent.Prezime + " je uspešno dodat u listu studenata.");
+
+    // Student mockStudent = CreateMockStudent();
+    // mockStudent.UnosOcena();
+    // AddStudent(mockStudent);
+    inputStudents();
+  }
+
+  public void inputStudents()
+  {
+
+    Student student = CreateStudent();
+    if (student == null)
+    {
+      Console.WriteLine("Kraj unosa.");
+      return;
+    }
+    student.UnosOcena();
+    Console.WriteLine();
+    AddStudent(student);
+    inputStudents();
   }
 }

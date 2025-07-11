@@ -8,6 +8,6 @@ class Program
         StudentFactory studentFactory = new StudentFactory();
         studentFactory.initClass();
 
-        StudentPrinter.Prikazi(studentFactory.Students[0]);
+        StudentPrinter.CountStudents(studentFactory);
     }
 }
