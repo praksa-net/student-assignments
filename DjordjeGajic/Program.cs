@@ -18,6 +18,7 @@ class Program
             }
         } while (unos != 0);
         Student student = new Student("Djordje", "Gajic", 2007, ocene);
+        Console.ReadLine();
     }
 
     
