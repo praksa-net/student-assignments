@@ -1,12 +1,9 @@
-class Uspeh
+public enum Uspeh
 {
-  public enum UspehEnum
-  {
     Odlican,
     VrloDobar,
     Dobar,
     Dovoljan,
     Nedovoljan,
     NemaOcena
-  }
 }

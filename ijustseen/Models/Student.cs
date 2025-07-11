@@ -6,15 +6,15 @@ class Student
   public int GodinaRodjenja { get; set; }
   public int[] Ocene { get; set; }
 
-  public enum Uspeh
-  { 
-    Odlican,
-    VrloDobar,
-    Dobar,
-    Dovoljan,
-    Nedovoljan,
-    NemaOcena
-  }
+  // public enum Uspeh
+  // { 
+  //   Odlican,
+  //   VrloDobar,
+  //   Dobar,
+  //   Dovoljan,
+  //   Nedovoljan,
+  //   NemaOcena
+  // }
 
   public Student() { }
 
@@ -58,11 +58,11 @@ class Student
   public Uspeh OdrediUspeh()
   {
     double prosek = IzracunajProsek();
-    if (prosek == 0.0) return (Uspeh)5;
-    else if (prosek >= 4.5) return (Uspeh)0;
-    else if (prosek >= 3.5) return (Uspeh)1;
-    else if (prosek >= 2.5) return (Uspeh)2;
-    else if (prosek >= 1.5) return (Uspeh)3;
-    else return (Uspeh)4;
+    if (prosek == 0.0) return Uspeh.NemaOcena;
+    else if (prosek >= 4.5) return Uspeh.Odlican;
+    else if (prosek >= 3.5) return Uspeh.VrloDobar;
+    else if (prosek >= 2.5) return Uspeh.Dobar;
+    else if (prosek >= 1.5) return Uspeh.Dovoljan;
+    else return Uspeh.Nedovoljan;
   }
 }
