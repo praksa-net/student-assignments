@@ -1,4 +1,7 @@
-class Validator
+using System;
+using System.Globalization;
+
+public class Validator
 {
   public Validator() { }
 
@@ -11,7 +14,7 @@ class Validator
     return true;
   }
 
-  public static int getValidatedIntString()
+  public static int UnesiBroj()
   {
     try
     {
@@ -25,7 +28,7 @@ class Validator
     catch
     {
       Console.WriteLine("Unos nije validan. Molimo unesite ceo broj.");
-      return getValidatedIntString();
+      return UnesiBroj();
     }
   }
   

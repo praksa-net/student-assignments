@@ -1,31 +1,37 @@
-class StudentPrinter
+using System;
+using System.Collections.Generic;
+
+public interface IStudentPrinter
 {
-  public StudentPrinter() { }
+    void Prikazi(Student s);
+    void PrikaziSve(List<Student> studenti);
+}
 
-  public static void Prikazi(Student s)
-  {
-    Console.WriteLine($"Ime: {s.Ime}");
-    Console.WriteLine($"Prezime: {s.Prezime}");
-    Console.WriteLine($"Godina rođenja: {s.GodinaRodjenja}");
-    Console.WriteLine($"Prosek ocena: {s.IzracunajProsek()}");
-    Console.Write("Uspeh: ");
-    Console.ForegroundColor = ConsoleColor.Yellow;
-    Console.WriteLine(s.OdrediUspeh());
-    Console.ResetColor();
-  }
+public class ConsoleStudentPrinter : IStudentPrinter
+{
+    public void Prikazi(Student s)
+    {
+        Console.WriteLine($"Ime: {s.Ime}");
+        Console.WriteLine($"Prezime: {s.Prezime}");
+        Console.WriteLine($"Godina rođenja: {s.GodinaRodjenja}");
+        Console.WriteLine($"Prosek ocena: {s.IzracunajProsek()}");
+        Console.Write("Uspeh: ");
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine(s.OdrediUspeh());
+        Console.ResetColor();
+    }
 
-  public static void CountStudents(StudentFactory studentFactory)
-  {
-    List<Student> students = studentFactory.Students;
-    Console.WriteLine($"Broj studenata: {students.Count}");
-    if (students.Count > 0)
+    public void PrikaziSve(List<Student> studenti)
     {
-      Console.WriteLine("Prvi student:");
-      Prikazi(students[0]);
+        if (studenti.Count == 0)
+        {
+            Console.WriteLine("Nema studenata.");
+            return;
+        }
+        for (int i = 0; i < studenti.Count; i++)
+        {
+            Console.WriteLine($"--- Student #{i + 1} ---");
+            Prikazi(studenti[i]);
+        }
     }
-    else
-    {
-      Console.WriteLine("Nema studenata.");
-    }
-  }
 }

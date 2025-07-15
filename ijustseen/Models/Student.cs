@@ -1,19 +1,13 @@
-class Student
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+public class Student
 {
   public string Ime { get; set; }
   public string Prezime { get; set; }
   public int GodinaRodjenja { get; set; }
   public int[] Ocene { get; set; }
-
-  // public enum Uspeh
-  // { 
-  //   Odlican,
-  //   VrloDobar,
-  //   Dobar,
-  //   Dovoljan,
-  //   Nedovoljan,
-  //   NemaOcena
-  // }
 
   public Student() { }
 
@@ -27,17 +21,17 @@ class Student
   public void UnosOcena()
   { 
     Console.Write("Unesite broj ocena studenta:");
-    int brojOcena = Validator.getValidatedIntString();
+    int brojOcena = Validator.UnesiBroj();
     Ocene = new int[brojOcena];
     for (int i = 0; i < brojOcena; i++)
     {
       Console.Write($"Unesite {i + 1}. ocenu: ");
-      int ocena = Validator.getValidatedIntString();
+      int ocena = Validator.UnesiBroj();
       while (!Validator.ValidateOcena(ocena))
       {
         Console.WriteLine("Uneta ocena nije validna. Unesite ocenu između 1 i 5.");
         Console.Write($"Unesite {i + 1}. ocenu: ");
-        ocena = Validator.getValidatedIntString();
+        ocena = Validator.UnesiBroj();
       }
       Ocene[i] = ocena;
     }

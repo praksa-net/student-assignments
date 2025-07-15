@@ -1,0 +1,22 @@
+[
+  {
+    "Ime": "Andrej",
+    "Prezime": "Jerosenkov",
+    "GodinaRodjenja": 2007,
+    "Ocene": [
+      4,
+      5,
+      5
+    ]
+  },
+  {
+    "Ime": "Loki",
+    "Prezime": "Edgar",
+    "GodinaRodjenja": -2444,
+    "Ocene": [
+      1,
+      2,
+      4
+    ]
+  }
+]
