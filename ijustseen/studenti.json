@@ -1,22 +1,35 @@
 [
   {
     "Ime": "Andrej",
-    "Prezime": "Jerosenkov",
-    "GodinaRodjenja": 2007,
+    "Prezime": "Jeros",
+    "GodinaRodjenja": 2003,
     "Ocene": [
-      4,
-      5,
-      5
+      2,
+      3,
+      3
     ]
   },
   {
-    "Ime": "Loki",
-    "Prezime": "Edgar",
-    "GodinaRodjenja": -2444,
+    "Ime": "eng",
+    "Prezime": "ekrg",
+    "GodinaRodjenja": 1989,
     "Ocene": [
-      1,
       2,
-      4
+      3,
+      3,
+      3
+    ]
+  },
+  {
+    "Ime": "kol",
+    "Prezime": "feri",
+    "GodinaRodjenja": 2000,
+    "Ocene": [
+      2,
+      5,
+      5,
+      5,
+      3
     ]
   }
 ]

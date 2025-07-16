@@ -47,7 +47,7 @@ public class StudentFactory
       return null;
     }
     Console.Write("Unesite godinu rođenja studenta: ");
-    int yearOfBirth = Validator.UnesiBroj();
+    int yearOfBirth = Validator.UnesiDatum();
 
     Student student = new Student(name, surname, yearOfBirth);
 
@@ -94,10 +94,11 @@ public class StudentFactory
 
   public void SaveToJsonFile(string filePath = "studenti.json")
   {
-      var options = new JsonSerializerOptions { WriteIndented = true };
-      options.Converters.Add(new JsonStringEnumConverter());
-      string json = JsonSerializer.Serialize(Students, options);
-      File.WriteAllText(filePath, json);
-      Console.WriteLine($"Studenti su sačuvani u fajl: {filePath}");
+    var options = new JsonSerializerOptions { WriteIndented = true };
+    options.Converters.Add(new JsonStringEnumConverter());
+    string json = JsonSerializer.Serialize(Students, options);
+    File.WriteAllText(filePath, json);
+    Console.WriteLine($"--Studenti su sačuvani u fajl: {filePath}--");
+    Console.WriteLine();
   }
 }

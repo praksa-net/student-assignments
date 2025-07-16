@@ -31,6 +31,14 @@ public class Validator
       return UnesiBroj();
     }
   }
+
+  public static int UnesiDatum()
+  {
+    int year = UnesiBroj();
+    if (year >= 1900 && year <= 2025) return year;
+    Console.WriteLine("Unesite validnu godinu između 1900 i 2025.");
+    return UnesiDatum();
+  }
   
   public static bool IsNameValid(string input)
   {

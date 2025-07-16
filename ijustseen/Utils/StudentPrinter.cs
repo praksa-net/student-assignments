@@ -32,6 +32,65 @@ public class ConsoleStudentPrinter : IStudentPrinter
         {
             Console.WriteLine($"--- Student #{i + 1} ---");
             Prikazi(studenti[i]);
+            Console.WriteLine();
         }
+    }
+
+    public void PrikaziNajvisiProsek(List<Student> studenti)
+    {
+        if (studenti.Count == 0)
+        {
+            Console.WriteLine("Nema studenata za prikaz.");
+            return;
+        }
+
+        Student najboljiStudent = studenti[0];
+        foreach (var student in studenti)
+        {
+            if (student.IzracunajProsek() > najboljiStudent.IzracunajProsek())
+            {
+                najboljiStudent = student;
+            }
+        }
+
+        Console.WriteLine("Student sa najvišim prosekom:");
+        Prikazi(najboljiStudent);
+        Console.WriteLine();
+    }
+
+    public void PrikaziNajmanjiProsek(List<Student> studenti)
+    {
+        if (studenti.Count == 0)
+        {
+            Console.WriteLine("Nema studenata za prikaz.");
+            return;
+        }
+
+        Student najmanjiStudent = studenti[0];
+        foreach (var student in studenti)
+        {
+            if (student.IzracunajProsek() < najmanjiStudent.IzracunajProsek())
+            {
+                najmanjiStudent = student;
+            }
+        }
+
+        Console.WriteLine("Student sa najnižim prosekom:");
+        Prikazi(najmanjiStudent);
+        Console.WriteLine();
+    }
+
+    public void PrikaziBrojOdlicnihStudenata(List<Student> studenti)
+    {
+        int brojOdlicnih = 0;
+        foreach (var student in studenti)
+        {
+            if (student.OdrediUspeh() == Uspeh.Odlican)
+            {
+                brojOdlicnih++;
+            }
+        }
+        Console.WriteLine($"Broj odličnih studenata: {brojOdlicnih}");
+        Console.WriteLine();
     }
 }

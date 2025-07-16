@@ -18,5 +18,8 @@ public static class StudentApp
         printer.PrikaziSve(studentFactory.GetAllStudents());
 
         studentFactory.SaveToJsonFile();
+
+        printer.PrikaziNajvisiProsek(studentFactory.GetAllStudents());
+        printer.PrikaziNajmanjiProsek(studentFactory.GetAllStudents());
     }
 } 
