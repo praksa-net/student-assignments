@@ -2,22 +2,28 @@
 
 public class StudentApp
 {
-   
+   public List<Student> studenti = new List<Student>();
 
-    public void UnosStudenta()
+    public void UnosStudenata()
     {
-        Console.Write("Unesite ime studenta: ");
-        string ime = Console.ReadLine();
-        Console.Write("Unesite prezime studenta: ");
-        string prezime = Console.ReadLine();
-        Console.Write("Unesite godinu rodjenja studenta: ");
-        int godinaRodjenja;
-        while (!int.TryParse(Console.ReadLine(), out godinaRodjenja) || godinaRodjenja <= 0)
+        Console.WriteLine("Koliko studenata zelite da unesete?");
+        int BrojStudenata= int.Parse(Console.ReadLine());
+
+        for (int i = 0; i < BrojStudenata; i++)
         {
-            Console.Write("Molimo unesite ispravnu godinu rodjenja: ");
+            Console.Write("Unesite ime studenta: ");
+            string ime = Console.ReadLine();
+            Console.Write("Unesite prezime studenta: ");
+            string prezime = Console.ReadLine();
+            Console.Write("Unesite godinu rodjenja studenta: ");
+            int godinaRodjenja;
+            while (!int.TryParse(Console.ReadLine(), out godinaRodjenja) || godinaRodjenja <= 1990)
+            {
+                Console.Write("Molimo unesite godinu rodjenja vecu od 1990: ");
+            }
+            Student student = new Student(ime, prezime, godinaRodjenja);
+               studenti.Add(student);
         }
-        Student student = new Student(ime, prezime, godinaRodjenja);
-       
     }
 
  
