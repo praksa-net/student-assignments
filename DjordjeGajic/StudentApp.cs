@@ -10,7 +10,7 @@ public class StudentApp
 
 	public StudentApp()
 	{
-        students = GetStudents();
+        students = Json.Get();
         do
         {
             AddStudent();
@@ -18,7 +18,7 @@ public class StudentApp
             Console.WriteLine("Da li zelite da nastavite sa unosom studenata? Ukoliko ne, unesite 'kraj'.");
         } while (Console.ReadLine().ToLower() != "kraj");
         Console.WriteLine("Studenti uspesno sacuvani.");
-        SaveStudents();
+        Json.Save(students);
     }
 
     public void AddStudent()
@@ -39,29 +39,16 @@ public class StudentApp
 
         int godinaRodjenja = UnosGodine.Unos();
         List<int> ocene = new List<int>();
-        int unos = 1;
+        int unos;
         do
         {
             unos = UnosOcene.Unos(ocene);
         } while (unos != 0);
+
         Student student = new Student(ime, prezime, godinaRodjenja, ocene);
         students.Add(student);
         
     }
     
-    public void SaveStudents()
-    {
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true
-        };
-        string json = JsonSerializer.Serialize(students, options);
-        File.WriteAllText("C:\\Users\\Administrator\\source\\repos\\student-assignments\\DjordjeGajic\\students.json", json);
-    }
-
-    public List<Student> GetStudents()
-    {
-        string jsonString = File.ReadAllText("C:\\Users\\Administrator\\source\\repos\\student-assignments\\DjordjeGajic\\students.json");
-        return JsonSerializer.Deserialize<List<Student>>(jsonString);
-    }
+    
 }
