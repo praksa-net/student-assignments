@@ -5,9 +5,20 @@ using DjordjeGajic;
 /// </summary>
 public class StudentApp
 {
+    List<Student> students;
 
 	public StudentApp()
 	{
+        students = new List<Student>();
+        do
+        {
+            AddStudent();
+            Console.WriteLine("Da li zelite da nastavite sa unosom studenata? Ukoliko ne, unesite 'kraj'.");
+        } while (Console.ReadLine().ToLower() != "kraj");
+    }
+
+    public void AddStudent()
+    {
         Console.WriteLine("Unesite ime studenta:");
         string ime;
         do
@@ -20,7 +31,7 @@ public class StudentApp
         do
         {
             prezime = Console.ReadLine();
-        }while(!Validator.IsNameValid(prezime));
+        } while (!Validator.IsNameValid(prezime));
 
         Console.WriteLine("Unesite godinu rodjenja:");
         int godinaRodjenja = UnosGodine.Unos();
@@ -31,7 +42,7 @@ public class StudentApp
             unos = UnosOcene.Unos(ocene);
         } while (unos != 0);
         Student student = new Student(ime, prezime, godinaRodjenja, ocene);
+        students.Add(student);
     }
-
     
 }
