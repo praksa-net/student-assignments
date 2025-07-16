@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace DjordjeGajic
 {
-    internal class Validator
+    public class Validator
     {
-        static int Validacija()
+        public static int Validacija()
         {
             while (true)
             {
-                if (int.TryParse(Console.ReadLine(), out int rezultat))
+                try
                 {
-                    if (rezultat > 0 && rezultat < 6)
+                    Console.Write("Unesite ocenu (1 do 5): ");
+                    int rezultat = int.Parse(Console.ReadLine());
+
+                    if (rezultat >= 0 && rezultat <= 5)
                     {
                         return rezultat;
                     }
@@ -23,9 +26,17 @@ namespace DjordjeGajic
                         Console.WriteLine("Molimo Vas unesite validnu ocenu (od 1 do 5).");
                     }
                 }
-                else
+                catch (FormatException)
                 {
                     Console.WriteLine("Molimo Vas unesite BROJ od 1 do 5.");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Uneti broj je prevelik ili premali.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Dogodila se greška: {ex.Message}");
                 }
             }
         }
