@@ -13,17 +13,17 @@ public class StudentApp
         do
         {
             ime = Console.ReadLine();
-        } while (!IsNameValid(ime));
+        } while (!Validator.IsNameValid(ime));
 
         Console.WriteLine("Unesite prezime studenta:");
         string prezime;
         do
         {
             prezime = Console.ReadLine();
-        }while(!IsNameValid(prezime));
+        }while(!Validator.IsNameValid(prezime));
 
         Console.WriteLine("Unesite godinu rodjenja:");
-        int godinaRodjenja = int.Parse(Console.ReadLine());
+        int godinaRodjenja = UnosGodine.Unos();
         List<int> ocene = new List<int>();
         int unos = 1;
         do
@@ -33,8 +33,5 @@ public class StudentApp
         Student student = new Student(ime, prezime, godinaRodjenja, ocene);
     }
 
-    public static bool IsNameValid(string input)
-    {
-        return !string.IsNullOrWhiteSpace(input);
-    }
+    
 }

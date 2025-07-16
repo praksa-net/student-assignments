@@ -40,5 +40,43 @@ namespace DjordjeGajic
                 }
             }
         }
+
+        public static bool IsNameValid(string input)
+        {
+            return !string.IsNullOrWhiteSpace(input);
+        }
+
+        public static int YearValidation()
+        {
+            while (true)
+            {
+                try
+                {
+                    Console.WriteLine("Unesite godinu rodjenja:");
+                    int rezultat = int.Parse(Console.ReadLine());
+
+                    if(rezultat >= 2000 && rezultat <= 2006)
+                    {
+                        return rezultat;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Molimo Vas unesite validnu godinu rodjenja.");
+                    }
+                }
+                catch(FormatException)
+                {
+                    Console.WriteLine("Molimo Vas unesite BROJ od 2000 do 2006.");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine("Uneti broj je preveliki ili premali.");
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine($"Dogodila se greska: {ex.Message}");
+                }
+            }
+        }
     }
 }
