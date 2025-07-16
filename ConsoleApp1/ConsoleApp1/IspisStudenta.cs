@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,8 @@ namespace ConsoleApp1
 {
     class IspisStudenta
     {
-        public static void IspišiSve()
+        public static bool IsValid(int ocena) => ocena >= 1 && ocena <= 5;
+        public void IspišiSve()
         {
             Console.WriteLine("Unesi ime");
             string ime = Console.ReadLine();
@@ -46,6 +48,9 @@ namespace ConsoleApp1
             s.Ispis();
             s.IzracunajProsek();
             s.OdrediUspeh();
+            string json = JsonConvert.SerializeObject(s, Formatting.Indented);
+            string putanja = @"C:\Users\Administrator\Desktop\studenti.json";
+            File.WriteAllText(putanja, json);
         }
     }
 }

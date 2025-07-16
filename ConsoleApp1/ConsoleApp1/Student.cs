@@ -43,7 +43,7 @@ namespace ConsoleApp1
             {
                 Console.WriteLine(Uspeh.VrloDobar);
             }
-            else
+            if(prosek > 4.5)
             {
                 Console.WriteLine(Uspeh.Odlican);
             }
