@@ -52,7 +52,6 @@ namespace DjordjeGajic
             {
                 try
                 {
-                    Console.WriteLine("Unesite godinu rodjenja:");
                     int rezultat = int.Parse(Console.ReadLine());
 
                     if(rezultat >= 2000 && rezultat <= 2006)

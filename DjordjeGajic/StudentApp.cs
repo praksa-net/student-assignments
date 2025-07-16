@@ -1,5 +1,6 @@
-﻿using System;
-using DjordjeGajic;
+﻿using DjordjeGajic;
+using System;
+using System.Text.Json;
 /// <summary>
 /// Summary description for Class1
 /// </summary>
@@ -9,12 +10,14 @@ public class StudentApp
 
 	public StudentApp()
 	{
-        students = new List<Student>();
+        students = GetStudents();
         do
         {
             AddStudent();
+            Console.WriteLine("Student uspesno dodat u listu.");
             Console.WriteLine("Da li zelite da nastavite sa unosom studenata? Ukoliko ne, unesite 'kraj'.");
         } while (Console.ReadLine().ToLower() != "kraj");
+        SaveStudents();
     }
 
     public void AddStudent()
@@ -33,7 +36,6 @@ public class StudentApp
             prezime = Console.ReadLine();
         } while (!Validator.IsNameValid(prezime));
 
-        Console.WriteLine("Unesite godinu rodjenja:");
         int godinaRodjenja = UnosGodine.Unos();
         List<int> ocene = new List<int>();
         int unos = 1;
@@ -43,6 +45,18 @@ public class StudentApp
         } while (unos != 0);
         Student student = new Student(ime, prezime, godinaRodjenja, ocene);
         students.Add(student);
+        
     }
     
+    public void SaveStudents()
+    {
+        string json = JsonSerializer.Serialize(students);
+        File.WriteAllText("students.json", json);
+    }
+
+    public List<Student> GetStudents()
+    {
+        string jsonString = File.ReadAllText("students.json");
+        return JsonSerializer.Deserialize<List<Student>>(jsonString);
+    }
 }
