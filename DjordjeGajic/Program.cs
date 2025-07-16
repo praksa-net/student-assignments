@@ -7,6 +7,4 @@ class Program
         StudentApp app = new StudentApp();
         Console.ReadKey();
     }
-
-    
 }

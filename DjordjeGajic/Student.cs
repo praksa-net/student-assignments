@@ -49,20 +49,6 @@ public class Student
         return prosek;
     }
 
-    /*void PrikazInformacija()
-    {
-        Console.WriteLine("Informacije o studentu:");
-        Console.WriteLine($"Ime i prezime: {Ime} {Prezime}");
-        Console.WriteLine($"Godina rodjenja: {GodinaRodjenja}");
-        Console.WriteLine("Ocene studenta");
-        foreach (int ocena in Ocene)
-        {
-            Console.Write(ocena + " ");
-        }
-        Console.WriteLine();
-        Console.WriteLine($"Prosek i uspeh: {IzracunajProsek()} - {OdrediUspeh()}");
-    }*/
-
     public Student(string ime, string prezime, int godina, List<int> ocene)
 	{
         Ime = ime;
