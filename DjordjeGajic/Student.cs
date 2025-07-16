@@ -7,10 +7,10 @@ using System;
 public class Student
 {
 
-    public string Ime;
-    public string Prezime;
-    public int GodinaRodjenja;
-    public List<int> Ocene;
+    public string Ime { get; set; }
+    public string Prezime { get; set; }
+    public int GodinaRodjenja {  get; set; }
+    public List<int> Ocene {  get; set; }
 
     public double IzracunajProsek()
     {
@@ -49,11 +49,11 @@ public class Student
         return prosek;
     }
 
-    public Student(string ime, string prezime, int godina, List<int> ocene)
+    public Student(string ime, string prezime, int godinaRodjenja, List<int> ocene)
 	{
         Ime = ime;
         Prezime = prezime;
-        GodinaRodjenja = godina;
+        GodinaRodjenja = godinaRodjenja;
         Ocene = ocene;
         StudentInfo.PrikazInformacija(this);
 	}

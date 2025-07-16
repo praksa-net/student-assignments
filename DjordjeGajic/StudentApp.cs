@@ -17,6 +17,7 @@ public class StudentApp
             Console.WriteLine("Student uspesno dodat u listu.");
             Console.WriteLine("Da li zelite da nastavite sa unosom studenata? Ukoliko ne, unesite 'kraj'.");
         } while (Console.ReadLine().ToLower() != "kraj");
+        Console.WriteLine("Studenti uspesno sacuvani.");
         SaveStudents();
     }
 
@@ -50,13 +51,17 @@ public class StudentApp
     
     public void SaveStudents()
     {
-        string json = JsonSerializer.Serialize(students);
-        File.WriteAllText("students.json", json);
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+        string json = JsonSerializer.Serialize(students, options);
+        File.WriteAllText("C:\\Users\\Administrator\\source\\repos\\student-assignments\\DjordjeGajic\\students.json", json);
     }
 
     public List<Student> GetStudents()
     {
-        string jsonString = File.ReadAllText("students.json");
+        string jsonString = File.ReadAllText("C:\\Users\\Administrator\\source\\repos\\student-assignments\\DjordjeGajic\\students.json");
         return JsonSerializer.Deserialize<List<Student>>(jsonString);
     }
 }
