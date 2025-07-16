@@ -20,7 +20,7 @@ namespace DjordjeGajic
             File.WriteAllText("C:\\Users\\Administrator\\source\\repos\\student-assignments\\DjordjeGajic\\students.json", json);
         }
 
-        public static List<Student> Get()
+        internal static List<Student> Get()
         {
             string jsonString = File.ReadAllText("C:\\Users\\Administrator\\source\\repos\\student-assignments\\DjordjeGajic\\students.json");
             return JsonSerializer.Deserialize<List<Student>>(jsonString);

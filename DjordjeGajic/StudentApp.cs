@@ -38,6 +38,7 @@ public class StudentApp
         } while (!Validator.IsNameValid(prezime));
 
         int godinaRodjenja = UnosGodine.Unos();
+
         List<int> ocene = new List<int>();
         int unos;
         do

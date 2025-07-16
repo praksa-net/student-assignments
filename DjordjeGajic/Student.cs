@@ -55,6 +55,6 @@ public class Student
         Prezime = prezime;
         GodinaRodjenja = godinaRodjenja;
         Ocene = ocene;
-        StudentInfo.PrikazInformacija(this);
+        StudentInfo studentInfo = new StudentInfo(this);
 	}
 }
