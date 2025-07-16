@@ -11,11 +11,13 @@ namespace KonstantinSokolov.Services
 {
     public class StudentApp
     {
-
-        public static void Run(IStudentPrinter printer, bool useMocks = false)
+        private readonly IStudentPrinter _printer;
+        public StudentApp(IStudentPrinter printer)
         {
-
-
+            _printer = printer;
+        }
+        public void Run(bool useMocks = false)
+        {
             List<Student> students;
 
             if (useMocks)
@@ -91,7 +93,7 @@ namespace KonstantinSokolov.Services
             }
 
             Console.WriteLine("\nPrikaz studenata:");
-            printer.PrikaziListu(students);
+            _printer.PrikaziListu(students);
         }
     }
 }

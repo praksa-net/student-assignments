@@ -1,8 +1,8 @@
 ﻿using KonstantinSokolov.Models;
 using KonstantinSokolov.Services;
 using KonstantinSokolov.Services.Printers;
-using System;
-using static KonstantinSokolov.Services.StudentApp;
+
+using Microsoft.Extensions.DependencyInjection;
 
 namespace KonstantinSokolov
 {
@@ -10,8 +10,14 @@ namespace KonstantinSokolov
     {
         static void Main(string[] args)
         {
-            var consolePrinter = new StudentConsolePrinter();
-            StudentApp.Run(printer: consolePrinter, useMocks: false);
+            var services = new ServiceCollection();
+            services.AddSingleton<IStudentPrinter, StudentConsolePrinter>();
+            services.AddSingleton<StudentApp>();
+
+            var provider = services.BuildServiceProvider();
+
+            var app = provider.GetRequiredService<StudentApp>();
+            app.Run(useMocks: false);
         }
     }
 
