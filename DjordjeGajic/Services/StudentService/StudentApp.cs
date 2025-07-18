@@ -48,7 +48,7 @@ public class StudentApp
 
         Student student = new Student(ime, prezime, godinaRodjenja, ocene);
         students.Add(student);
-        
+
     }
     
     
